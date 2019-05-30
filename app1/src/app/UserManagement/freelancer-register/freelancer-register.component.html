@@ -1,0 +1,70 @@
+
+ <h3>Register</h3> 
+<div class="container mystyle">
+   
+    <div class="row" style="margin-bottom: 10px" >
+            <div class="col-md-4">
+            <input [(ngModel)]="fullName" required type="text" placeholder="Enter your full name" class="form-control">
+            </div>
+            <div class=" select col-md-4">
+                <select [(ngModel)]="serviceSelected" class="form-control">
+                   <option *ngFor="let service of services">{{service}}</option>
+                </select>
+             </div>       
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+            <div class="col-md-4">
+            <input [(ngModel)]="email" required type="text" placeholder="Enter your email" class="form-control">
+            </div>
+            
+            <div class="col-md-4">
+            <input [(ngModel)]="mobileNumber" required type="number" placeholder="Enter your mobile number" class="form-control">
+            </div>      
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+            <div class="col-md-2">
+            <input [(ngModel)]="zipCode" required type="number" placeholder="Enter zip code" class="form-control">
+            </div>
+            
+            <div class="col-md-2">
+                <input [(ngModel)]="locality" disabled type="text" placeholder="Locality" class="form-control">
+            </div>
+            
+            <div class="col-md-2">
+                <input [(ngModel)]="city" disabled type="text" placeholder="City" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+                <input [(ngModel)]="state" disabled type="text" placeholder="State" class="form-control">
+            </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-4">
+            <input [(ngModel)]="password" required type="password" placeholder="Enter password" class="form-control">
+        </div>
+        
+        <div class="col-md-4">
+            <input [(ngModel)]="confirmPassword" required type="password" placeholder="Confirm password" class="form-control">
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-4">
+            <textarea rows="3" placeholder="Enter your Address" class="form-control"></textarea>
+        </div>
+
+        <div class="col-md-4">
+            <label style="color: black">Attach document</label>
+            <input type="file">
+        </div> 
+
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+      
+        <div class="col-md-4">
+            <input (click)='onRegister()' type="button" value="Register" class="btn btn-success" >
+        </div>
+    </div>
+</div>

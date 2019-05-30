@@ -19,8 +19,15 @@ export class AppComponent {
   }
 
   onCustomerSelect(){
+    console.log('user click');
       this.router.navigate(['/userRegister'])
       this.modalService.dismissAll();
+  }
+
+  onFreelancerSelect(){
+    console.log('frelancer click');
+    this.router.navigate(['/freelancerRegister'])
+    this.modalService.dismissAll('/freelancerRegister');
   }
 
 }
