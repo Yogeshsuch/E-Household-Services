@@ -1,0 +1,14 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="RegisterAs">Register As</h4>
+  </div>
+  <div class="modal-body">
+      <div class="input-group">
+        <button style="margin-right: 10px" type="button" class="btn btn-primary">Customer</button>
+        <button style="margin-left: 10px" type="button" class="btn btn-primary">Freelancer</button>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">No thanks</button>
+  </div>
+</ng-template>

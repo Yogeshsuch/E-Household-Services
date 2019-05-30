@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav style="background-color: rgb(53, 51, 51)" class="navbar navbar-inverse">
+    <div class="container">
+       <nav class="navbar-header">
+            <h3 style="color: whitesmoke" class="">HomeKhas</h3>
+       </nav>   
+    </div>
+    <div>
+      <button class="btn btn-primary float-right" (click)="openPopUp(content)">Register</button>
+    </div>
+</nav>
+
+<div class="container">
+ <router-outlet></router-outlet>
+</div>
+
+   <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="RegisterAs">Register As</h4>
+      </div>
+      <div class="modal-body">
+          <div class="input-group">
+            <button style="margin-right: 10px" type="button" (click)="onCustomerSelect()" class="btn btn-primary">Customer</button>
+            <button style="margin-left: 10px" type="button" (click)="onFreelancerSelect()" class="btn btn-primary">Freelancer</button>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">No thanks</button>
+      </div>
+
+    </ng-template>
+
+   
