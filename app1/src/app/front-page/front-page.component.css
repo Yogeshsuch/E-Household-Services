@@ -1,0 +1,15 @@
+h4{
+    text-align: center;
+    color: white;
+    text-decoration: underline
+}
+
+.carsImage{
+    width: 100%;
+    height: 250px;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-direction: alternate;
+}

@@ -1,1 +1,109 @@
 
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <img class="carsImage" [src]="images[0]" alt="Random first slide">
+      <div style="position: absolute; left: 50px; top: 50px" >
+        <p class="col-md-12" style="font-size: 15mm; font-style: oblique; color:darkblue"><strong>Welcome to HomeKhaas </strong></p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img class="carsImage" [src]="images[1]" alt="Random second slide">
+      <div class="carousel-caption">
+        <p class="col-md-3" style="font-size: larger"><strong>We are pride to send</strong></p>
+        <p class="col-md-6" style="font-size: 10mm; color:whitesmoke;font-style: oblique"><strong>VERIFIED SERVICEMEN</strong></p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img class="carsImage" [src]="images[2]"  alt="Random third slide">
+      <div class="carousel-caption">
+        <p class="col-md-6" style="font-size: 10mm; color:navy;font-style: oblique"><strong>We are available in Pune</strong></p>
+        <p class="col-md-6" style="font-size: larger"><strong>Comming soon in Mumbai</strong></p>
+    </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img class="carsImage" [src]="images[3]" alt="Random fourth slide">
+      <div class="carousel-caption">
+        <p class="col-md-6" style="font-size: larger; color: black"><strong>We are understanding value of</strong></p>
+        <p class="col-md-6" style="font-size: 10mm; color:darkblue;font-style: oblique"><strong>PRICISE BILLING </strong></p>
+    
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+<div class="container" style="text-align: center">
+    <div style="margin-top: 40px" class="row">
+        <div class="col-md-4">
+            <div class="card" style="width: 300px; height: 400px;">
+                <img class="card-img-top" src="/assets/electicalService.jpeg" alt="Card image cap">
+                <div style="background-color:rgba(12, 11, 11, 0.295)" class="card-body">
+                  <h5 class="card-title">Electrical</h5>
+                  <p class="card-text">All electical home appliances like fan, light, oven and more</p>
+                  <a (click)='onBookOrder(10)' class="btn btn-primary">Book</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card" style="width: 300px; height: 400px;">
+                <img class="card-img-top" src="/assets/plumbing.jpg" alt="Card image cap">
+                <div style="background-color:rgba(12, 11, 11, 0.295)" class="card-body">
+                  <h5 class="card-title">Plumbing</h5>
+                  <p class="card-text">Tank, Taps, Showers, Sanitaryware and more</p>
+                  <a (click)='onBookOrder(20)' class="btn btn-primary">Book</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card" style="width: 300px; height: 400px;">
+                <img class="card-img-top" src="/assets/AC.jpeg" alt="Card image cap">
+                <div style="background-color:rgba(12, 11, 11, 0.295)" class="card-body">
+                  <h5 class="card-title">AC & Refrigeration</h5>
+                  <p class="card-text">AC and Refrigerator installation, Gas filling, Servicing and more</p>
+                  <a (click)='onBookOrder(30)' class="btn btn-primary">Book</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+        <h4 class="">How we work</h4>
+        <p style="text-align: center;color: white">
+            You can book call for home appliances service requirement from your home,
+            It's quite easy
+        </p>
+    
+        <hr>
+        <hr>
+    
+    <div class="row">
+        <div style="color: whitesmoke" class="col-md-3">
+            <img style="width: 70px; height: 80px; " src="/assets/list.png" alt="">
+            
+             <h5 style="margin-top: 10px"> <strong style="size: 20mm">We have list of verified serviceman</strong></h5> 
+           
+            <p>
+                These are trained, verified and trustworthy guys
+            </p>      
+        </div>
+    
+        <div style="color: whitesmoke" class="col-md-3 container">
+            <img style="width: 70px; height: 80px;" src="/assets/Serviecman.png" alt="">
+    
+             <h5 style="margin-top: 10px"> <strong style="size: 20mm">The best serviceman is assign for you</strong></h5> 
+            <p>
+                To address your requirement and meet 2 hours TAT.
+            </p>      
+        </div>
+        <div style="color: whitesmoke" class="col-md-3 container">
+            <img style="width: 70px; height: 80px;" src="/assets/meet.png" alt="">
+            
+             <h5 style="margin-top: 10px"> <strong style="size: 20mm">HomeKhas resolves all your home related issues</strong></h5> 
+           
+            <p>
+                The call is closed after your complete satisfaction.
+            </p>      
+        </div>
+       
+    </div>
+</div>

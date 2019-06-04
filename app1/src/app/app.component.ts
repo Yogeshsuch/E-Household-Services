@@ -10,6 +10,8 @@ import { UserRegisterComponent } from './UserManagement/user-register/user-regis
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  isNavbarCollapsed = true;
   title = 'HomeKhas';
   constructor(private modalService : NgbModal,private router:Router){ }
 

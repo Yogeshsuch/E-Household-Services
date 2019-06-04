@@ -12,6 +12,7 @@ import {MatDialogModule, MatFormFieldModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterPopUpComponent } from './PopUps/register-pop-up/register-pop-up.component';
 import { FreelancerRegisterComponent } from './UserManagement/freelancer-register/freelancer-register.component';
+import { BookOrderComponent } from './ProductManagement/book-order/book-order.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FreelancerRegisterComponent } from './UserManagement/freelancer-registe
     UserRegisterComponent,
     UserLoginComponent,
     RegisterPopUpComponent,
-    FreelancerRegisterComponent
+    FreelancerRegisterComponent,
+    BookOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { FreelancerRegisterComponent } from './UserManagement/freelancer-registe
       {path:'index',component:FrontPageComponent},
       {path:'',redirectTo:'/index',pathMatch:'full'},
       {path:'userRegister',component:UserRegisterComponent},
-      {path:'register',component:RegisterPopUpComponent},
+      {path:'bookOrder',component:BookOrderComponent},
       {path:'freelancerRegister', component:FreelancerRegisterComponent}
     ])
   ],

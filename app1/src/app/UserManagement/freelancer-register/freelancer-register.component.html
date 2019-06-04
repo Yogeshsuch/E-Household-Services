@@ -7,7 +7,7 @@
             <input [(ngModel)]="fullName" required type="text" placeholder="Enter your full name" class="form-control">
             </div>
             <div class=" select col-md-4">
-                <select [(ngModel)]="serviceSelected" class="form-control">
+                <select title="Select service" [(ngModel)]="serviceSelected" class="form-control">
                    <option *ngFor="let service of services">{{service}}</option>
                 </select>
              </div>       
@@ -55,7 +55,7 @@
         </div>
 
         <div class="col-md-4">
-            <label style="color: black">Attach document</label>
+            <label style="color:white">Attach document</label>
             <input type="file">
         </div> 
 
