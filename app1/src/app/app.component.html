@@ -20,7 +20,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <button routerLink="/user-login" class="btn btn-success btn-sm" style="margin-left: 10px">Login</button>
+        <button (click)="openPopUp(Logincontent)" class="btn btn-success btn-sm" style="margin-left: 10px">Login</button>
       </li>
       <li>
         <button style="margin-left: 10px" class="btn btn-warning btn-sm" (click)="openPopUp(content)">Register</button>
@@ -28,22 +28,6 @@
     </ul>
   </div>
 </nav>
-
-
-
-<!-- <nav style="background-color:black" class="navbar navbar-default navbar-expand-md">
-  <a style="color: rgb(241, 237, 237)" href="" class="navbar-brand" >HomeKhas</a>
-  <button class="navbar-toggler hidden-sm-up" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target = "#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation"  type="button">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="container">
-        <div class="navbar-header mr-auto">
-            <a style="color: whitesmoke; position: absolute; left: 1100px; top: 18px" routerLink="/contact-us">Contact Us</a>
-            <a style="color: whitesmoke; position: absolute; left: 1200px; top: 18px" routerLink="/help">Help</a>
-            <button style="position: absolute; left: 1250px;top: 10px " class="btn btn-primary" (click)="openPopUp(content)">Register</button>
-        </div>   
-    </div>
-  </nav> -->
 
 <div>
  <router-outlet></router-outlet>
@@ -56,13 +40,79 @@
       <div class="modal-body">
           <div class="input-group">
             <button style="margin-right: 10px" type="button" (click)="onCustomerSelect()" class="btn btn-outline-dark">Customer</button>
-            <button style="margin-left: 10px" type="button" (click)="onFreelancerSelect()" class="btn btn-outline-dark">Freelancer</button>
+            <button style="margin-left: 10px" type="button" (click)="onFreelancerSelect()" class="btn btn-outline-dark">Professional</button>
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="modal.close()">No thanks</button>
       </div>
+</ng-template>
 
+<ng-template #Logincontent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="LoginAs">Login As</h4>
+    </div>
+    <div class="modal-body">
+        <div class="input-group">
+          <button style="margin-right: 10px" type="button" (click)="openPopUp(userLoginContent)" class="btn btn-outline-dark">Customer</button>
+          <button style="margin-left: 10px" type="button" (click)="openPopUp(freelancerLoginContent)" class="btn btn-outline-dark">Professional</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close()">No thanks</button>
+    </div>
+</ng-template>
+
+<ng-template #userLoginContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="Login">Login</h4>
+    </div>
+    <div class="modal-body">
+        <div class="input-group">
+               <div>
+                  <div style="margin-bottom: 10px">
+                      <input style="margin-right: 10px" required type="text" placeholder="User email" class="form-control">
+                    </div>
+                    
+                    <div style="margin-bottom: 10px">
+                        <input required type="text" placeholder="Password" class="form-control">
+                    </div>
+                    <div style="margin-bottom: 10px">
+                        <input style="margin-right: 10px" type="button" value="Login" class="btn btn-success">
+                        <input style="margin-right: 10px" type="button" (click)='closeAll()' value="Cancel" class="btn btn-danger">
+                    </div>
+                    <div >
+                        <input type="button" value="Sign Up" class="btn btn-warning" >
+                    </div>
+               </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #freelancerLoginContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="Login">Login</h4>
+    </div>
+    <div class="modal-body container">
+        <div class="input-group">
+               <div>
+                  <div style="margin-bottom: 10px">
+                      <input style="margin-right: 10px" required type="text" placeholder="User email" class="form-control">
+                    </div>
+                    
+                    <div style="margin-bottom: 10px">
+                        <input required type="text" placeholder="Password" class="form-control">
+                    </div>
+                    <div style="margin-bottom: 10px">
+                        <input style="margin-right: 10px" type="button" value="Login" class="btn btn-success">
+                        <input style="margin-right: 10px" type="button" (click)='closeAll()' value="Cancel" class="btn btn-danger">
+                    </div>
+                    <div >
+                        <input type="button" value="Sign Up" class="btn btn-warning" >
+                    </div>
+               </div>
+        </div>
+    </div>
 </ng-template>
 
 

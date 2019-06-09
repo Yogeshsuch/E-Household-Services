@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { UserRegisterComponent } from './UserManagement/user-register/user-register.component';
 
 
 @Component({
@@ -20,16 +19,28 @@ export class AppComponent {
     
   }
 
+  // onCustomerLogin(){
+  //   this.router.navigate(['/Userlogin'])
+  //   this.modalService.dismissAll();
+  // }
+  // onFreelancerLogin(){
+  //   this.router.navigate(['/FreelancerLogin'])
+  //   this.modalService.dismissAll();
+  // }
+
+  closeAll(){
+    this.modalService.dismissAll();
+  }
+
   onCustomerSelect(){
-    console.log('user click');
       this.router.navigate(['/userRegister'])
-      this.modalService.dismissAll();
+      this.closeAll();
   }
 
   onFreelancerSelect(){
-    console.log('frelancer click');
     this.router.navigate(['/freelancerRegister'])
     this.modalService.dismissAll('/freelancerRegister');
+    this.closeAll();
   }
 
 }

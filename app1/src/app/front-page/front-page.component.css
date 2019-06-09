@@ -13,3 +13,7 @@ h4{
     animation-duration: 3s;
     animation-direction: alternate;
 }
+
+body{
+    background-color: rgb(7, 115, 119)
+}
