@@ -1,1 +1,99 @@
 
+<table style="margin-top: 20px" class="container">
+  <tr  class="bg-primary">
+    <th>Booking details</th>
+  </tr>
+</table>
+<div style="margin-top: 20px" class="container">
+    <div style="margin-top: 10px" class="row">
+      <div class="col-md-4">
+          <div>Service::
+            <input [(ngModel)]="service" disabled type="text" value="">
+          </div>
+        </div>
+    </div>  
+      
+    <div style="margin-top: 10px" class="row">
+        <div class="col-md-4">
+            <label for="">Address::</label>
+            <textarea [(ngModel)]="address" class="form-control" rows="3" cols=""></textarea>
+        </div>
+        <div class="col-md-2">
+          <label for="">Expected Date::</label>
+          <input [(ngModel)]="eDate" class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input">
+        </div>
+        <div class="col-md-2">
+            <label for="">Expected Time::</label>
+            <input [(ngModel)]="eTime" class="form-control" type="time" value="00:00:00" id="example-time-input">
+        </div>
+        <div class="col-md-3">
+            <label for="">Contact number::</label>
+            <input [(ngModel)]="mobNumber" type="tele" class="form-control">  
+        </div>
+    </div>
+
+    <div style="margin-top: 10px" class="row">
+        <div class="col-md-4">
+            <label for="">Issue description::</label>
+            <textarea [(ngModel)]="issue" class="form-control" rows="3" cols=""></textarea>
+        </div>
+        <div class="col-md-2">
+          <label for=""></label>
+         
+        </div>
+        <div class="col-md-2">
+            <label for=""></label>
+            
+        </div>
+        <div class="col-md-3">
+            <label for=""></label>
+            
+        </div>
+    </div>
+</div>
+
+<table style="margin-top: 20px" class="container">
+    <tr  class="bg-primary">
+      <th>Review details</th>
+    </tr>
+  </table>
+  
+  <div class="container">
+    <div style="margin-top: 10px" class="row">
+            <div class="col-md-4">
+                    <div>Service:: {{service}}</div>
+                </div>    
+            </div>
+      <div style="margin-top: 10px" class="row">
+          <div class="col-md-4">
+              <div>Address::</div>
+              <p>{{address}}</p>
+          </div>
+          <div class="col-md-2">
+            <div>Expected Date:: {{eDate}}</div>
+          </div>
+          <div class="col-md-2">
+             <div>Expected Time:: {{eTime}}</div>
+          </div>
+          <div class="col-md-3">
+              <div>Contact number:: {{number}}</div>
+          </div>
+      </div>
+  </div>
+
+  <table style="margin-top: 20px" class="container">
+      <tr  class="bg-primary">
+        <th>Confirm booking</th>
+      </tr>
+    </table>
+    <div class="container">
+        <div style="margin-top: 20px" class="col-md-3">
+            <recaptcha
+                [formControl]="myRecaptcha"
+                (scriptLoad)="onScriptLoad()"
+                (scriptError)="onScriptError()"
+            ></recaptcha>
+        </div>
+    </div>
+
+

@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'
-import{ NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { FormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router';
+import{ NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { FrontPageComponent } from './front-page/front-page.component';
@@ -13,6 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterPopUpComponent } from './PopUps/register-pop-up/register-pop-up.component';
 import { FreelancerRegisterComponent } from './UserManagement/freelancer-register/freelancer-register.component';
 import { BookOrderComponent } from './ProductManagement/book-order/book-order.component';
+import { FreelancerLoginComponent } from './UserManagement/freelancer-login/freelancer-login.component';
+import { RecaptchaModule } from 'angular-google-recaptcha';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,22 +27,28 @@ import { BookOrderComponent } from './ProductManagement/book-order/book-order.co
     UserLoginComponent,
     RegisterPopUpComponent,
     FreelancerRegisterComponent,
-    BookOrderComponent
+    BookOrderComponent,
+    FreelancerLoginComponent
   ],
   imports: [
     BrowserModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    FormsModule,
+    FormsModule,ReactiveFormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'index',component:FrontPageComponent},
       {path:'',redirectTo:'/index',pathMatch:'full'},
       {path:'userRegister',component:UserRegisterComponent},
       {path:'bookOrder',component:BookOrderComponent},
+      {path:'Userlogin',component: UserLoginComponent},
+      {path:'FreelancerLogin', component:FreelancerLoginComponent},
       {path:'freelancerRegister', component:FreelancerRegisterComponent}
-    ])
+    ]),
+    RecaptchaModule.forRoot({
+      siteKey: '6Lck4qcUAAAAAO3poAcff6pQgctZSkzGTlrnKtLz'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
