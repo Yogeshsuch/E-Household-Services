@@ -1,0 +1,72 @@
+<br>
+        <button (click)="frontPage()" class="btn btn-success">Book order</button>
+        <h3 style="text-align: center">Welcome, {{name}}</h3>
+
+<div>
+  <table class="table table-striped container">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>Zip</th>
+        <th>Locality</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+        <td>{{mobileNo}}</td>
+        <td>{{address}}</td>
+        <td>{{zip}}</td>
+        <td>{{locality}}</td>
+        <td>{{city}}</td>
+        <td>{{state}}</td>
+        <td><button (click)="update()" class="btn btn-warning">Edit</button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<h3 style="text-align: center">Your Orders</h3>
+<div>
+  <table class="table table-striped container">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Req. Service</th>
+        <th>Issue</th>
+        <th>Order Date</th>
+        <th>Expected Date</th>
+        <th>Status</th>
+        <th>Amount</th>
+        <th>Assigned Pro</th>
+        <th>Call Professional</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{order[0]}}</td>
+        <td>{{order[1]}}</td>
+        <td>{{order[2]}}</td>
+        <td>{{order[3]}}</td>
+        <td>{{order[4]}}</td>
+        <td>{{order[5]}}</td>
+        <td>{{order[6]}}</td>
+        <td>{{order[7]}}</td>
+        <td>{{order[8]}}</td>
+        <td>
+          <div *ngIf="!order[7]">
+              <button class="btn btn-danger btn-sm" (click)="cancelOrder(order[0])" >Cancel</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

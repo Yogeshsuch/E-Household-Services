@@ -1,0 +1,38 @@
+<br>
+<div class="row container" style="margin-left: 80px">
+  <h3 style="text-align: center; margin: auto; display: block">List of All Professionals</h3>
+  <button (click)="customersList()" style="margin: auto; display: block" class="btn btn-info btn-sm">Show List of Customers</button>
+  <!-- <button (click)="addService()" style="margin: auto; display: block" class="btn btn-info btn-sm">Add a new Service</button> -->
+  <button (click)="ordersInfo()" style="margin: auto; display: block" class="btn btn-info btn-sm">Show Orders</button>
+  <button (click)="readFeedback()" style="margin: auto; display: block" class="btn btn-info btn-sm">Read Feedbacks</button>
+</div>
+<br>
+<div class="container">
+  <table class="table table-striped" style="text-align: center">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>Skill</th>
+        <th>Document</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let professional of professionals">
+        <td>{{professional.pid}}</td>
+        <td>{{professional.name}}</td>
+        <td>{{professional.email}}</td>
+        <td>{{professional.mobileNo}}</td>
+        <td>{{professional.address}}</td>
+        <td>{{professional.skill}}</td>
+        <!-- <td><img  class="thumbnail " style="height: 100px; width: 80px" src="data:image/jpg;base64,{{professional.document}}" alt="document" download></td> -->
+        <td> <a href="data:image/jpg;base64,{{professional.document}}" download>Document</a> </td>
+        <td><button *ngIf="!professional.verificationStatus" (click)="onVerify(professional.pid)" class="btn btn-sm btn-warning" style="margin-left: 15px">Verify</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

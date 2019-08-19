@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <nav class="navbar navbar-expand-md navbar-dark shadow" style="background-color:black">
-  <a class="navbar-brand" href="#">
+  <a style="color: blanchedalmond"class="navbar-brand">
     <img src="#" width="30" height="28" class="d-inline-block align-top" alt="">
     HomeKhaas
   </a>
@@ -20,10 +20,13 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <button (click)="openPopUp(Logincontent)" class="btn btn-success btn-sm" style="margin-left: 10px">Login</button>
+        <button (click)="openPopUp(Logincontent)" *ngIf="InvalidUser" class="btn btn-success btn-sm" style="margin-left: 10px">Login</button>
+      </li>
+      <li class="nav-item">
+        <button *ngIf="validUser" style="margin-left: 10px" class="btn btn-warning btn-sm" (click)="profile()">Profile</button>
       </li>
       <li>
-        <button style="margin-left: 10px" class="btn btn-warning btn-sm" (click)="openPopUp(content)">Register</button>
+        <button *ngIf="validUser" style="margin-left: 10px" class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
       </li>
     </ul>
   </div>
@@ -33,7 +36,7 @@
  <router-outlet></router-outlet>
 </div>
 
-<ng-template #content let-modal>
+<!-- <ng-template #content let-modal>
       <div class="modal-header">
         <h4 class="modal-title" id="RegisterAs">Register As</h4>
       </div>
@@ -46,7 +49,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="modal.close()">No thanks</button>
       </div>
-</ng-template>
+</ng-template> -->
 
 <ng-template #Logincontent let-modal>
     <div class="modal-header">
@@ -71,18 +74,18 @@
         <div class="input-group">
                <div>
                   <div style="margin-bottom: 10px">
-                      <input style="margin-right: 10px" required type="text" placeholder="User email" class="form-control">
+                      <input [(ngModel)]="email" style="margin-right: 10px" required type="text" placeholder="User email" class="form-control">
                     </div>
                     
                     <div style="margin-bottom: 10px">
-                        <input required type="text" placeholder="Password" class="form-control">
+                        <input [(ngModel)]="password" required type="password" placeholder="Password" class="form-control">
                     </div>
                     <div style="margin-bottom: 10px">
-                        <input style="margin-right: 10px" type="button" value="Login" class="btn btn-success">
-                        <input style="margin-right: 10px" type="button" (click)='closeAll()' value="Cancel" class="btn btn-danger">
+                        <input (click)='userLogin()' style="margin-right: 10px" type="button" value="Login" class="btn btn-success">
+                        <input (click)='closeAll()' style="margin-right: 10px" type="button"  value="Cancel" class="btn btn-danger">
                     </div>
                     <div >
-                        <input type="button" value="Sign Up" class="btn btn-warning" >
+                        <input type="button" (click)='onCustomerSelect()' value="Sign Up" class="btn btn-warning" >
                     </div>
                </div>
         </div>
@@ -97,18 +100,18 @@
         <div class="input-group">
                <div>
                   <div style="margin-bottom: 10px">
-                      <input style="margin-right: 10px" required type="text" placeholder="User email" class="form-control">
+                      <input [(ngModel)]="email" style="margin-right: 10px" required type="text" placeholder="User email" class="form-control">
                     </div>
                     
                     <div style="margin-bottom: 10px">
-                        <input required type="text" placeholder="Password" class="form-control">
+                        <input [(ngModel)]="password" required type="password" placeholder="Password" class="form-control">
                     </div>
                     <div style="margin-bottom: 10px">
-                        <input style="margin-right: 10px" type="button" value="Login" class="btn btn-success">
+                        <input style="margin-right: 10px" type="button" (click)='freelancerLogin()' value="Login" class="btn btn-success">
                         <input style="margin-right: 10px" type="button" (click)='closeAll()' value="Cancel" class="btn btn-danger">
                     </div>
                     <div >
-                        <input type="button" value="Sign Up" class="btn btn-warning" >
+                        <input type="button" (click)='onFreelancerSelect()' value="Sign Up" class="btn btn-warning" >
                     </div>
                </div>
         </div>

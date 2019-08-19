@@ -1,0 +1,26 @@
+<br>
+<h3 style="text-align: center">All Feedbacks</h3>
+<div class="container">
+  <table class="table table-striped" style="text-align: center">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Order ID</th>
+        <th>Name of Customer</th>
+        <th>Email</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feedback of feedbacks">
+        <td>{{feedback.id}}</td>
+        <td>{{feedback.oid}}</td>
+        <td>{{feedback.name}}</td>
+        <td>{{feedback.email}}</td>
+        <td>{{feedback.message}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button class="btn btn-info" routerLink="/dashboard" style="margin: auto; display: block;">Go back to Admin dashboard</button>

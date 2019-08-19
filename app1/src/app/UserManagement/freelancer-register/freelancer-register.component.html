@@ -7,7 +7,7 @@
             <input [(ngModel)]="fullName" required type="text" placeholder="Enter your full name" class="form-control">
             </div>
             <div class=" select col-md-4">
-                <select title="Select service" [(ngModel)]="serviceSelected" class="form-control">
+                <select title="Select service" (change)="skillSelect($event)" class="form-control">
                    <option *ngFor="let service of services">{{service}}</option>
                 </select>
              </div>       
@@ -18,12 +18,12 @@
             </div>
             
             <div class="col-md-4">
-            <input [(ngModel)]="mobileNumber" required type="number" placeholder="Enter your mobile number" class="form-control">
+            <input [(ngModel)]="mobileNumber" required type="tel" placeholder="Enter your mobile number" class="form-control">
             </div>      
     </div>
     <div class="row" style="margin-bottom: 10px">
             <div class="col-md-2">
-            <input [(ngModel)]="zipCode" required type="number" placeholder="Enter zip code" class="form-control">
+            <input (keyup)="onZipInsert($event)" [(ngModel)]="zipCode" required type="text" placeholder="Enter zip code" class="form-control">
             </div>
             
             <div class="col-md-2">
@@ -44,19 +44,19 @@
             <input [(ngModel)]="password" required type="password" placeholder="Enter password" class="form-control">
         </div>
         
-        <div class="col-md-4">
-            <input [(ngModel)]="confirmPassword" required type="password" placeholder="Confirm password" class="form-control">
-        </div>
+        <!-- <div class="col-md-4">
+            <input [(ngModel)]="confPassword" required type="password" placeholder="Confirm password" class="form-control">
+        </div> -->
     </div>
 
     <div class="row" style="margin-bottom: 10px">
         <div class="col-md-4">
-            <textarea rows="3" placeholder="Enter your Address" class="form-control"></textarea>
+            <textarea [(ngModel)]="address" rows="3" placeholder="Enter your Address" class="form-control"></textarea>
         </div>
 
         <div class="col-md-4">
             <label style="color:white">Attach document</label>
-            <input type="file">
+            <input (change)="onSelectImage($event)" type="file">
         </div> 
 
     </div>
