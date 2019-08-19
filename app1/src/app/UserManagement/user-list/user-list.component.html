@@ -1,0 +1,29 @@
+<br>
+
+<h3 style="text-align: center">List of All Customers</h3>
+<div class="container">
+  <table class="table table-striped" style="text-align: center">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.cid}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.mobileNo}}</td>
+        <td>{{customer.address}}</td>
+        <td><button (click)="onDelete(customer.cid)" class="btn btn-danger btn-sm" style="margin-left: 15px">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button class="btn btn-info" routerLink="/dashboard" style="margin: auto; display: block;">Go back to Admin dashboard</button>

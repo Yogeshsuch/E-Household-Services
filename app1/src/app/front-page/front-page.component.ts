@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material'
 import { UserRegisterComponent } from '../UserManagement/user-register/user-register.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-front-page',
@@ -10,16 +10,21 @@ import { Router } from '@angular/router';
 })
 export class FrontPageComponent implements OnInit {
 
+  userId:number;
 
   images = ['/assets/carousel_1.jpg','/assets/Home3.jpg','/assets/Home1.jpg','/assets/carousel_2.jpg'];
 
-  constructor(private matDialog:MatDialog, private router:Router) { }
+  constructor(private matDialog:MatDialog, private router:Router,private activeRoute : ActivatedRoute) {
+    activeRoute.queryParams.subscribe(param=>{
+        this.userId = param["id"];
+    })
+   }
 
   ngOnInit() {
   }
 
   onBookOrder(id){
-    
+   
       this.router.navigate(['./bookOrder'], {queryParams:{'id':id}});
   }
 

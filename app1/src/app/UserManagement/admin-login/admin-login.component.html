@@ -1,0 +1,18 @@
+<br>
+<div class="full">
+  <h2 style="text-align: center">Admin Login Panel</h2>
+  <form class="container col-md-4">
+    <div class="form-group">
+      <label for="exampleInputEmail1"></label>
+      <input type="email" [(ngModel)]="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1"></label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <button (click)="onAdminLogin()" class="btn btn-success">Login</button>
+      <button routerLink="/" class="btn btn-danger" style="margin-left: 10px;">Cancel</button>
+    </div>
+  </form>
+</div>
