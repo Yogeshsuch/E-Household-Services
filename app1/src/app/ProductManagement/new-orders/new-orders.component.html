@@ -1,0 +1,34 @@
+<button class="btn btn-success" (click)="profile()" name="newOrders">Back</button>
+<br>
+<div>
+  <h3 style="text-align: center">Profile Page</h3>
+<table class="table table-striped container">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Issue</th>
+      <th>Order Date</th>
+      <th>Expected Date</th>
+      <th>Expected Time</th>
+      <th>Customer Address</th>
+      <th>Customer Mobile</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{order.oid}}</td>
+      <td>{{order.issue}}</td>
+      <td>{{order.orderDate}}</td>
+      <td>{{order.expectDate}}</td>
+      <td>{{order.expectTime}}</td>
+      <td>{{order.address}}</td>
+      <td>{{order.mobileNo}}</td>
+      <td>{{order.amount}}</td>
+      <td><button (click)="acceptOrder(order.oid)"  class="btn btn-success">Accept</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

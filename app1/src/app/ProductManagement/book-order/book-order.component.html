@@ -20,11 +20,11 @@
         </div>
         <div class="col-md-2">
           <label for="">Expected Date::</label>
-          <input [(ngModel)]="eDate" class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input">
+          <input [(ngModel)]="expectDate" class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input">
         </div>
         <div class="col-md-2">
             <label for="">Expected Time::</label>
-            <input [(ngModel)]="eTime" class="form-control" type="time" value="00:00:00" id="example-time-input">
+            <input [(ngModel)]="expectTime" class="form-control" type="time" value="00:00:00" id="example-time-input">
         </div>
         <div class="col-md-3">
             <label for="">Contact number::</label>
@@ -70,13 +70,13 @@
               <p>{{address}}</p>
           </div>
           <div class="col-md-2">
-            <div>Expected Date:: {{eDate}}</div>
+            <div>Expected Date:: {{expectDate}}</div>
           </div>
           <div class="col-md-2">
-             <div>Expected Time:: {{eTime}}</div>
+             <div>Expected Time:: {{expectTime}}</div>
           </div>
           <div class="col-md-3">
-              <div>Contact number:: {{number}}</div>
+              <div>Contact number:: {{mobNumber}}</div>
           </div>
       </div>
   </div>
@@ -87,13 +87,36 @@
       </tr>
     </table>
     <div class="container">
-        <div style="margin-top: 20px" class="col-md-3">
-            <recaptcha
-                [formControl]="myRecaptcha"
-                (scriptLoad)="onScriptLoad()"
-                (scriptError)="onScriptError()"
-            ></recaptcha>
+        <div class="row">
+            <div style="margin-top: 20px" class="col-md-6">
+                <recaptcha
+                    [formControl]="myRecaptcha"
+                    (scriptLoad)="onScriptLoad()"
+                    (scriptError)="onScriptError()"
+                ></recaptcha>
+            </div>
+            <div style="margin-top: 20px" class="col-md-3">
+               <div>
+                   <input  type="button" (click)="openPopUp(otp)" class="btn btn-success" value="Book">
+               </div>
+            </div>
         </div>
     </div>
 
 
+    <ng-template #otp let-modal>
+        <div class="modal-body container">
+            <div class="input-group">
+                   <div>
+                      <div style="margin-bottom: 10px">
+                          <input [(ngModel)]="otpValue" style="margin-right: 10px" required type="text" placeholder="Enter otp" class="form-control">
+                        </div>
+        
+                        <div style="margin-bottom: 10px">
+                            <input style="margin-right: 10px" type="button" (click)='orderPlace()' value="Confirm" class="btn btn-success">
+                            <input style="margin-right: 10px" type="button" (click)='closeAll()' value="Cancel" class="btn btn-danger">
+                        </div>
+                   </div>
+            </div>
+        </div>
+    </ng-template>

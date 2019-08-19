@@ -1,0 +1,30 @@
+<div style="margin-top: 10px">
+  <table class="table table-striped container">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Issue</th>
+        <th>Expected Date</th>
+        <th>Expected Time</th>
+        <th>Address</th>
+        <th>Status</th>
+        <th>Amount</th>
+        <th>Customer Name</th>
+        <th>Customer Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{order[0]}}</td>
+        <td>{{order[1]}}</td>
+        <td>{{order[2]}}</td>
+        <td>{{order[3]}}</td>
+        <td>{{order[4]}},{{order[9]}},{{order[10]}}</td>
+        <td>{{order[5]}}</td>
+        <td>{{order[6]}}</td>
+        <td>{{order[7]}}</td>
+        <td>{{order[8]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

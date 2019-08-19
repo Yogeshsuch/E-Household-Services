@@ -1,0 +1,28 @@
+<h1 style="text-align: center; margin-top: 30px">Update Your Profile Details</h1>
+<hr class="container">
+<form class="container">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName"></label>
+      <input [(ngModel)]="name" name="name" type="text" class="form-control" id="inputName" placeholder="Name :: {{name}}" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputMobile"></label>
+      <input [(ngModel)]="mobileNo" name="mobileNo" type="tel" class="form-control" id="inputMobile" placeholder="Mobile No :: {{mobileNo}}" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail"></label>
+      <input [(ngModel)]="email" name="email" type="email" class="form-control" id="inputEmail" placeholder="Email :: {{email}}" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword"></label>
+      <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Password :: {{password}}" required>
+    </div>
+  </div>
+  <div style="margin-top: 20px">
+    <button (click)="updateUser()" type="submit" class="btn btn-primary">Update</button>
+    <button routerLink="/userProfile" type="submit" style="margin-left: 30px" class="btn btn-danger">Cancel</button>
+  </div>
+</form>

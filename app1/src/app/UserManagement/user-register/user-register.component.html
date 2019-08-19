@@ -4,51 +4,51 @@
         
     <div class="row" style="margin-bottom: 10px" >
             <div class="col-md-4">
-            <input required type="text" placeholder="Enter your full name" class="form-control">
+            <input [(ngModel)]="name" required type="text" placeholder="Enter your full name" class="form-control">
             </div>
             
             <div class="col-md-4">
-            <textarea rows="3" placeholder="Enter your Address" class="form-control"></textarea>
+            <textarea [(ngModel)]="address" rows="3" placeholder="Enter your Address" class="form-control"></textarea>
             </div>
             
     </div>
     <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-            <input required type="text" placeholder="Enter your email" class="form-control">
+            <input [(ngModel)]="email" required type="text" placeholder="Enter your email" class="form-control">
             </div>
             
             <div class="col-md-4">
-            <input required type="number" placeholder="Enter your mobile number" class="form-control">
+            <input [(ngModel)]="mobileNo" required type="tel" placeholder="Enter your mobile number" class="form-control">
             </div>
             
     </div>
     <div class="row" style="margin-bottom: 10px">
             <div class="col-md-2">
-            <input required type="number" placeholder="Enter zip code" class="form-control">
+            <input [(ngModel)]="zip" (keyup)="onZipInsert($event)" required type="text" placeholder="Enter zip code" class="form-control">
             </div>
             
             <div class="col-md-2">
-                <input disabled type="text" placeholder="Locality" class="form-control">
+                <input [(ngModel)]="locality" disabled type="text" placeholder="Locality" class="form-control">
             </div>
             
             <div class="col-md-2">
-                <input disabled type="text" placeholder="City" class="form-control">
+                <input [(ngModel)]="city" disabled type="text" placeholder="City" class="form-control">
             </div>
 
             <div class="col-md-2">
-                <input disabled type="text" placeholder="State" class="form-control">
+                <input [(ngModel)]="state" disabled type="text" placeholder="State" class="form-control">
             </div>
     </div>
     <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <input required type="password" placeholder="Enter password" class="form-control">
+                <input [(ngModel)]="password" required type="password" placeholder="Enter password" class="form-control">
             </div>
             
-            <div class="col-md-4">
-                <input required type="password" placeholder="Confirm password" class="form-control">
-            </div>
+            <!-- <div class="col-md-4">
+                <input (keyup)="confirmPassword($event)" [(ngModel)]="confPassword" required type="password" placeholder="Confirm password" class="form-control">
+            </div> -->
     </div>
     <div>
-        <input type="button" value="Register" class="btn btn-success" >
+        <input (click)="onSignup()" type="button" value="Register" class="btn btn-success" >
     </div>
 </div>
